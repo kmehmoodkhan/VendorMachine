@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VendorMachine": {
+      "commandName": "Project",
+      "commandLineArgs": "order 5.67 2 3"
+    }
+  }
+}
