@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using VendorMachine.Domain.Models;
 
 namespace VendorMachine.Domain.Repository
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetProducts();
-
-        int OrderProduct(Product product);
+        Task<IEnumerable<Product>> GetProducts();
     }
 }

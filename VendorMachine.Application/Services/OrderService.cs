@@ -20,7 +20,7 @@ namespace VendorMachine.Application.Services
         {
             OrderStatus orderStatus = OrderStatus.None;
 
-            var stock = _productRepository.GetProducts().Where(p => p.ProductId == orderDetail.ProductId).FirstOrDefault();
+            var stock = _productRepository.GetProducts().Result.Where(p => p.ProductId == orderDetail.ProductId).FirstOrDefault();
 
             if (stock != null)
             {

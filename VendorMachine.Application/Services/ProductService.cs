@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using VendorMachine.Application.Interfaces;
 using VendorMachine.Application.ViewModels;
 using VendorMachine.Domain.Models;
@@ -18,17 +19,18 @@ namespace VendorMachine.Application.Services
             _productRepository = productRepository;
         }
 
-        public ProductViewModel GetProducts()
+        public async Task<ProductViewModel> GetProducts()
         {
             return new ProductViewModel
             {
-                Products = _productRepository.GetProducts()
+                Products = await _productRepository.GetProducts()
             };
         }
 
         public Product GetProduct(int id)
         {
-            return _productRepository.GetProducts().Where(p => p.ProductId == id).FirstOrDefault();
+            var products = _productRepository.GetProducts();
+            return products.Result.Where(p => p.ProductId == id).FirstOrDefault();
         }
     }
 }

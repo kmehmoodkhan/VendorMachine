@@ -15,6 +15,7 @@ namespace VendorMachine.Infra.IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IProductPrintService, ProductPrintConsole>();
+            services.AddScoped<IVendorMachine, VMConsole>();
         }
     }
 }
